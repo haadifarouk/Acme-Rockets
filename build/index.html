@@ -23,15 +23,27 @@
                 </nav>
             </div>
         </section>
-        <section id="mobile-menu" class="absolute top-0 bg-black w-full text-5xl flex flex-col justify-center">
-            <button class="text-8xl self-end px-6">
+        <section id="mobile-menu" class="absolute top-0 bg-black w-full text-5xl hidden flex-col justify-center origin-top animate-open-menu">
+            <button id="close-button" class="text-8xl self-end px-6">
                 &times;
             </button>
-           <!--  <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
+             <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
                 <a href="#hero" class="w-full text-center py-6 hover:opacity-90">
                     Home
                 </a>
-            </nav> -->
+                <a href="#rockets" class="w-full text-center py-6 hover:opacity-90">
+                    Our Rockets
+                </a>
+                <a href="#testimonials" class="w-full text-center py-6 hover:opacity-90">
+                    Testimonials
+                </a>
+                <a href="#contact" class="w-full text-center py-6 hover:opacity-90">
+                    Contact Us
+                </a>
+                <a href="#footer" class="w-full text-center py-6 hover:opacity-90">
+                    Legal
+                </a>
+            </nav>
         </section>
     </header>
     <main class="max-w-4xl mx-auto">
@@ -97,7 +109,7 @@
 
         <hr class="mx-auto bg-black dark:bg-white w-1/2">
 
-        <section id="Testimonials" class="p-6 my-12 scroll-mt-20">
+        <section id="testimonials" class="p-6 my-12 scroll-mt-20">
             <h2 class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">
                 Testimonials
             </h2>
@@ -143,7 +155,7 @@
 
         <hr class="mx-auto bg-black dark:bg-white w-1/2">
 
-        <section id="Contact" class="p-6 my-12 scroll-mt-16">
+        <section id="contact" class="p-6 my-12 scroll-mt-16">
             <h2 class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">
                 Contact Us
             </h2>
@@ -180,5 +192,22 @@
             </div>
         </section>
     </footer>
+    <script defer>
+        const initApp = () =>{
+        const hamburgerButton = document.querySelector('#hamburger-button');
+        const mobileMenu = document.querySelector('#mobile-menu');
+
+        const toggleMenu = () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+
+        }
+
+        hamburgerButton.addEventListener('click', toggleMenu);
+        mobileMenu.addEventListener('click', toggleMenu);
+    }
+
+    document.addEventListener('DOMContentLoaded', initApp);
+    </script>
 </body>
 </html>
